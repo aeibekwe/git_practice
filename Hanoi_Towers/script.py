@@ -28,7 +28,7 @@ print('\nThe fastest you can solve this game is in {0} moves'.format(num_optimal
 
 #Get User Input
 def get_input():
-    choices = [stacks.get_name()[0] for stack in stacks]
+    choices = [stack.get_name()[0] for stack in stacks]
     while(True):
         for i in range(len(stacks)):
             name = stacks[i].get_name()
@@ -51,4 +51,14 @@ while(right_stack.get_size() != num_disks):
         from_stack = get_input()
         print('\nWhich stack do you want to move to?\n')
         to_stack = get_input()
-        
+        if from_stack.size == 0:
+            print('\n\nInvalid Move. Try again')
+        elif (to_stack.size == 0) or (from_stack.peek() < to_stack.peek()):
+            disk = from_stack.pop()
+            to_stack.push(disk)
+            num_user_moves += 1
+            break
+        else:
+            print('\n\nInvalid Move. Try Again')
+    
+print('\n\nYou completed the game in {0} moves, and the optimal number of moves is {1}'.format(num_user_moves, num_optimal_moves))
