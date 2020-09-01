@@ -25,8 +25,7 @@ class Stack:
           item.set_next_node(self.top_item)
           self.top_item = item
           self.size += 1
-      else:
-          print('No more room!')
+      print('No more room!')
 
   def pop(self):
       if self.size > 0:
