@@ -1,5 +1,5 @@
-from stack import Stack
-from stack import Node
+from stack.py import Stack and Node
+#from stack import Node
 
 print('\nLet\'s play Towers of Hanoi!')
 
