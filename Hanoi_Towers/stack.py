@@ -37,7 +37,8 @@ class Stack:
 
   def peek(self):
       if self.size > 0:
-          return self.top_item.get_value()
+          x = self.top_item
+          return x.get_value()
       print('Nothing to see here!')
 
   def has_space(self):
