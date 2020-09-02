@@ -1,7 +1,10 @@
 from stack import Stack
 from node import Node
 
-print('\nLet\'s play Towers of Hanoi!')
+print('\nLet\'s play Towers of Hanoi!\n')
+print('''Objective: Move all disks from the Left Stack to the Right Stack.
+Note: Larger disks cannot be placed on smaller ones.
+''')
 
 #Create the Stacks
 stacks = []
