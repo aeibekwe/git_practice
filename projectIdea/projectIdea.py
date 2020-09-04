@@ -24,7 +24,7 @@
 #
 #
 #
-# Ideas: used hashmap with linked lists as underlying data structure,
+# Ideas: use hashmaps with linked lists as underlying data structure (or trees?),
 # to store the downloaded urls, and to compare the new urls to the old ones...
 # need to make sure that we're only downloading stuff that we don't have.
 # Also we need to make sure that if we're presented with folder,
