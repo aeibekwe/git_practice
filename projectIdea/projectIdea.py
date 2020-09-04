@@ -21,3 +21,12 @@
 #       3. First Amendment
 #       4. Contract Drafting and Negotiation
 #       5. Criminal Procedure
+#
+#
+#
+# Ideas: used hashmap with linked lists as underlying data structure,
+# to store the downloaded urls, and to compare the new urls to the old ones...
+# need to make sure that we're only downloading stuff that we don't have.
+# Also we need to make sure that if we're presented with folder,
+# that the program will know to access the folder and download the contents as well...
+#
