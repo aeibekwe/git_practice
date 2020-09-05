@@ -30,3 +30,5 @@
 # Also we need to make sure that if we're presented with folder,
 # that the program will know to access the folder and download the contents as well...
 #
+# maybe should have just made this a .txt |*_*|
+#
