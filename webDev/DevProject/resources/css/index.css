@@ -1,19 +1,39 @@
 * {
     font-family: Helvetica, Arial, sans-serif;
+    color: whitesmoke;
+    background-color: black;
   }
   
+  #subdetails {
+      font-size: 15px;
+      font-weight: normal;
+      font-style: italic;
+  }
   
   h1 {
-    color: SeaGreen;
+    color: gold;
+    background-color: black;
   }
   
-  
+  h2 {
+      color: gold;
+      font-size: 20px;
+  }
+
+  h3 {
+      color: gold;
+      font-size: 18px;
+  }
+
   p, 
   li {
     font-size: 18px;
+    list-style-type: square;
+    color: gray;
   }
   
   
   a {
     text-decoration: none;
+    color: goldenrod;
   }
