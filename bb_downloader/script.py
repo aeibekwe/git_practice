@@ -24,7 +24,14 @@ r = requests.get('https://login.usc.edu/login/login?spEntityID=https://shibbolet
 #if r.status_code == requests.codes.ok:
 #  print(r.headers['content-type'])
 
-# this url is not working... not sure why yet
+# this url is not working... 
+# Blackboard uses a special type of authorization... 
+# Not sure we'll get through with just this         :[
+#
+#
+# ALTERNATIVE TO DOING USING REQUESTS/SCRAPY: use a python gui that
+#
+#
 
 verbs = requests.options(r.url)
 #print(verbs.headers['allow'])
@@ -35,4 +42,4 @@ verbs = requests.options(r.url)
 print(r.header)
 
 
-
+### ANOTHER OPTION FOR HTML PARSING = LXML... 
