@@ -51,13 +51,16 @@ for i in result:
 
 file_two = open('latest_output.txt', 'a') #Changed the mode from overWrite to Append
 file_two.writelines(contents)
+file_two.write('\n(You also copy these contents [as space-separated-values] from copy_latest_output.txt)')
+file_two.close()
 
 # This is to add a list of items separated by only one space, so that it's easier to copy if need be.
+# note: you might want to create a second file for the contents to be copied... that way you can just open that and select all.
 contents_cp = []
 for i in result:
     i += ' '
     contents_cp.append(i)
 
-file_two.write('\nHere is the same list only separated by a single space, to make it easier to copy...\n\n')
-file_two.writelines(contents_cp)
-file_two.close()
+file_three = open('copy_latest_output.txt', 'w')
+file_three.writelines(contents_cp)
+file_three.close()
