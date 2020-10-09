@@ -1,3 +1,4 @@
+BE CAREFUL! THIS FUNCTION IS RECURSIVE!
 
 This function takes a directory and recurses through it in search of all files, which it then prints.  
 
