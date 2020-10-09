@@ -1,5 +1,5 @@
 from os import listdir
-from os.path import isfile, isdir, abspath
+from os.path import isfile, isdir
 
 # get_file_names will return embedded lists if there is a directory within a directory.  this function will flatten them out.
 def flatten(alist):
