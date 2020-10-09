@@ -36,7 +36,7 @@ while(isdir(path) != True):
 
 result = get_file_names(path)
 
-print('\nContents of {0} (\'cat\' or \'open\' latest_output.txt for results):\n\n{1}'.format(path, result))
+print('\nContents of {0} (\'cat\' or \'open -e\' latest_output.txt for results):\n\n{1}'.format(path, result))
 
 # This overwrites the contents of latest_output.txt to make space for new content and writes in the header
 file_one = open('latest_output.txt', 'w')
