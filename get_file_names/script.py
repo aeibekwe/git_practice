@@ -1,6 +1,8 @@
 from os import listdir
 from os.path import isfile, isdir, abspath
 
+# get_file_names will return embedded lists if there is a directory within a directory.  this function will flatten them out.
+
 def flatten(alist):
     result = []
     for i in alist:
@@ -10,6 +12,8 @@ def flatten(alist):
         else:
             result.append(i)
     return result
+
+# this function recursively goes through all the contents in a specified directory and checks whether it is a file or directory.  if it encounters a file, it adds it to a list.  if it encounters a directory, it opens that and repeats.  it doesn't stop until all files are retrieved.
 
 def get_file_names(file):
     file_list = listdir(file)
@@ -28,38 +32,31 @@ def get_file_names(file):
     
     return flat
 
-
 path = input('Specify chosen path [format = \'/directory\']: ')
 result = get_file_names(path)
 
 print('Contents of {0} (check latest_output.txt for results): {1}\n'.format(path, result))
 
+# This overwrites the contents of latest_output.txt to make space for new content and writes in the header
 file_one = open('latest_output.txt', 'w')
 file_one.write('Contents of {0}:\n\n'.format(path))
 file_one.close()
 
 # This is to add a newline character after each list item
 contents = []
-
 for i in result:
     i += ' \n'
     contents.append(i)
 
-file_two = open('latest_output.txt', 'a')
+file_two = open('latest_output.txt', 'a') #Changed the mode from overWrite to Append
 file_two.writelines(contents)
-file_two.close()
 
 # This is to add a list of items separated by only one space, so that it's easier to copy if need be.
-
 contents_cp = []
-
 for i in result:
     i += ' '
     contents_cp.append(i)
 
-file_three = open('latest_output.txt', 'a')
-file_three.write(
-    '\n\nHere is the same list only separated by a single space, to make it easier to copy...\n\n'
-)
-file_three.writelines(contents_cp)
-file_three.close()
+file_two.write('\n\nHere is the same list only separated by a single space, to make it easier to copy...\n\n')
+file_two.writelines(contents_cp)
+file_two.close()
