@@ -51,7 +51,7 @@ for i in result:
 
 file_two = open('latest_output.txt', 'a') #Changed the mode from overWrite to Append
 file_two.writelines(contents)
-file_two.write('\n(You also copy these contents [as space-separated-values] from copy_latest_output.txt)')
+file_two.write('\n(You can also copy these contents [as space-separated-values] from copy_latest_output.txt)')
 file_two.close()
 
 # This is to add a list of items separated by only one space, so that it's easier to copy if need be.
@@ -64,3 +64,5 @@ for i in result:
 file_three = open('copy_latest_output.txt', 'w')
 file_three.writelines(contents_cp)
 file_three.close()
+
+# Here is space for additional code to add a csv file, and a list of files minus the inputted directory path
