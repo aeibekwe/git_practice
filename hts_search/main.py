@@ -42,7 +42,7 @@ class HTS_Search: # This is a class to handle search results from hts.search()..
         counter = 0
         results_list = []
         # Add some code here that will (over)write the results to a text file located in ./search_results
-        print('\nResult No. XX  | HTS Code Number  |  Description\n')
+        print('\n\nResult No. XX  | HTS Code Number  |  Description\n--------------------------------------------------')
         for i in results_dict:
             null = 0
             hts_no = i.get("htsno")
