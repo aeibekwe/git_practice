@@ -10,7 +10,7 @@ class URL:
         self.url = url
 
     def __repr__(self):
-        return f'{self.__class__.__name__}, {self.url!r}'
+        return f'{self.__class__.__name__}: {self.url!r}'
 
     def search(self, query=None):
         s_payload = {'query': query}
@@ -28,27 +28,27 @@ class URL:
 
 class HTS_Search: # This is a class to handle search results from hts.search()... get the name for these classes as your queries
     def __init__(self, query):
-        hts = URL() #defined this within this function to reduce the steps I need to take to get the results
+        self.hts = URL() # defined this within this function to reduce the steps you need to take to get the results... also, allows you to call things like self.HTS_Search.hts.export() <-- might just make another function within this though to make this a bit more accessible...
         self.query = query
-        self.search_results = hts.search(query)
+        self.search_results = self.hts.search(query)
 
     def __repr__(self):
-        return f'{self.__class__.__name__}, {self.query!r}'
+        return f'{self.__class__.__name__} of {self.query!r} in {self.hts!r}'
 
-    def hts_code_descriptions(self): # plug in your results from URL.search() here to get a more readable result with the HTS Code and its Description
+    def results(self): # plug in your results from URL.search() here to get a more readable result with the HTS Code and its Description
         null = 0
         dict = eval(self.search_results)
         results_dict = dict.get("results")
         counter = 0
         results_list = []
         # Add some code here that will (over)write the results to a text file located in ./search_results
-        print('\nResult No. XX  | HTS Code Number:\n\t-- Description\n')
+        print('\nResult No. XX  | HTS Code Number  |  Description\n')
         for i in results_dict:
             null = 0
             hts_no = i.get("htsno")
             description = i.get("description")
             x = (hts_no, description)
             results_list.append(x)
-            print('\nResult No. {0}  |  {1}\n\t-- {2}\n'.format(counter, hts_no, description))
+            print('\nResult No. {0}  |  {1}  |  {2}\n'.format(counter, hts_no, description))
             counter += 1
         return #results_list #return this in case you need to index through the results list.  the index number should be equal to the "Result No.  "
