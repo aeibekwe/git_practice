@@ -12,6 +12,13 @@ def flatten(alist):
             result.append(i)
     return result
 
+# maybe you could make a File Class here that you'll put into the get_file_names function that will limit how deep the function recurses...you could also just add a counter/limiter in the function itself... if you make the class though then you might be able to just input the filename as opposed to the absolute path of the file name...
+#class Dir:
+#    def __init__(self, dirname=None, dirloc='./'):
+#        self.path = dirloc + dirname
+#        if isdir(self.path):
+
+
 # this function recursively goes through all the contents in a specified directory and checks whether it is a file or directory.  if it encounters a file, it adds it to a list.  if it encounters a directory, it opens that and repeats.  it doesn't stop until all files are retrieved.
 def get_file_names(file):
     file_list = listdir(file)
@@ -92,3 +99,17 @@ write_to_file('latest_output.csv', 'w', contents_csv, 'writelines')
 # This is for a tsv (tab-separated values) file
 contents_tsv = append_to_result(result, '\t')
 write_to_file('latest_output.tsv', 'w', contents_tsv, 'writelines')
+
+# Extra Step Needed! If filenames have spaces, you need to replace those with '\ ' to escape the space, so the terminal will read it!
+def no_spaces(the_results):
+    no_spaces_edit = []
+    for i in the_results:
+        x = i.replace(' ', '\\ ').replace('\'', '\\\'').replace('&', '\\&')
+        no_spaces_edit.append(x)
+    return no_spaces_edit
+
+# some code to escape the spaces and apostrophe's... hopefully that'll be the last of the formatting stuff... we can clean this up later.
+relpath_result = remove_inputted_path_from_result(result, path)
+result_with_no_spaces = no_spaces(relpath_result)
+result_with_no_spaces_ssv = append_to_result(result_with_no_spaces, ' ')
+write_to_file('copy.txt', 'w', result_with_no_spaces_ssv, 'writelines')

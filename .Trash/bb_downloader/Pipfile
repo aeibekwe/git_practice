@@ -10,6 +10,8 @@ requests = "*"
 scrapy = "*"
 pyautogui = "*"
 lxml = "*"
+oauthlib = "*"
+requests-oauthlib = "*"
 
 [requires]
 python_version = "3.7"
